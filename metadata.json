@@ -1,0 +1,6 @@
+{
+  "name": "Skup Aut Całe Mazowieckie",
+  "description": "Profesjonalny skup samochodów osobowych, dostawczych, terenowych i innych pojazdów na terenie całego województwa mazowieckiego. Szybka wycena, gotówka od ręki, dojazd do klienta 24/7.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
