@@ -190,10 +190,12 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(17, 17, 17, 0.9);
-      backdrop-filter: blur(10px);
+      background: rgba(17, 17, 17, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       transition: var(--transition-medium);
+      will-change: transform;
     }
 
     .header-inner {
@@ -405,7 +407,10 @@
       background-color: rgba(255, 255, 255, 0.1);
       color: var(--color-secondary);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      transform: translate3d(0, 0, 0);
+      will-change: transform;
     }
 
     .btn-secondary:hover {
@@ -509,9 +514,9 @@
     }
 
     @keyframes pulse {
-      0% { transform: scale(0.9); opacity: 1; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-      70% { transform: scale(1.1); opacity: 0.8; box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
-      100% { transform: scale(0.9); opacity: 1; box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+      0% { transform: scale(0.9); opacity: 0.8; }
+      50% { transform: scale(1.25); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.8; }
     }
 
     .hero h1 {
@@ -595,13 +600,16 @@
     .hero-premium-card {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       padding: 40px;
       border-radius: 16px;
       width: 100%;
       max-width: 440px;
       box-shadow: var(--shadow-lg);
       position: relative;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
     }
 
     .hero-premium-card::after {
@@ -707,6 +715,8 @@
       transition: var(--transition-medium);
       position: relative;
       overflow: hidden;
+      will-change: transform;
+      backface-visibility: hidden;
     }
 
     .buy-card::before {
@@ -894,6 +904,8 @@
       padding: 32px;
       box-shadow: var(--shadow-sm);
       transition: var(--transition-medium);
+      will-change: transform;
+      backface-visibility: hidden;
     }
 
     .timeline-card:hover {
@@ -938,6 +950,8 @@
       padding: 28px;
       box-shadow: var(--shadow-sm);
       transition: var(--transition-medium);
+      will-change: transform;
+      backface-visibility: hidden;
     }
 
     .why-us-card:hover {
@@ -1094,6 +1108,8 @@
       text-align: center;
       box-shadow: var(--shadow-sm);
       transition: var(--transition-medium);
+      will-change: transform;
+      backface-visibility: hidden;
     }
 
     .social-card:hover {
@@ -1168,7 +1184,7 @@
 
     @keyframes heartbeat {
       0% { transform: scale(1); }
-      50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 140, 0, 0.7); }
+      50% { transform: scale(1.04); }
       100% { transform: scale(1); }
     }
 
